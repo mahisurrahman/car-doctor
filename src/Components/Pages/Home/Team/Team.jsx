@@ -6,7 +6,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa6"
 
 const Team = () => {
     return (
-        <div className="w-10/12 mx-auto">
+        <div className="w-10/12 mx-auto mb-[100px]">
             <div className="text-center mb-10 ">
                 <p className='-mt-2 text-lg font-bold text-[#FF3811]'>Team</p>
                 <h3 className="text-4xl font-bold">Meet Our Team</h3>

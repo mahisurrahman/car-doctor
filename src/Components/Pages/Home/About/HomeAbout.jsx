@@ -5,7 +5,7 @@ import parts from '../../../../assets/images/about_us/parts.jpg';
 
 const HomeAbout = () => {
     return (
-        <div className="min-h-screen my-[100px]">
+        <div className="min-h-screen mt-[100px]">
             <div className="flex flex-row gap-">
                 <div className='w-1/2 relative'>
                     <img src={person} className="w-3/4 h-[400px] object-cover rounded-lg" />
