@@ -9,7 +9,7 @@ const HomeAbout = () => {
             <div className="flex flex-row gap-">
                 <div className='w-1/2 relative'>
                     <img src={person} className="w-3/4 h-[400px] object-cover rounded-lg" />
-                    <img src={parts} className="absolute right-8 top-[200px] border-8 border-white w-1/2 h-[300px] object-cover rounded-lg" />
+                    <img src={parts} className="w-1/2 absolute right-8 top-[200px] border-8 border-white  h-[300px] object-cover rounded-lg" />
                 </div>
                 <div className='w-1/2'>
                     <p className='-mt-2 text-lg font-bold text-[#FF3811]'>About Us</p>

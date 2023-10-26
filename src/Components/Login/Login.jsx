@@ -1,16 +1,27 @@
 import { BsFacebook, BsLinkedin, BsGoogle } from "react-icons/bs";
 import loginImg from '../../assets/images/login/login.svg';
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProviders/AuthProviders";
 
 const Login = () => {
+
+    const {signIn} = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        const user = {email, password};
-        console.log(user);
+
+        signIn(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            console.log(error);
+        })
 
     }
 
