@@ -13,7 +13,7 @@ const Navbar = () => {
     <li><Link to="/contact">Contact</Link></li>
   </>
   return (
-    <div className="navbar bg-base-100 h-20">
+    <div className="navbar bg-base-100 h-20 pt-10">
       <div className="navbar-start -mx-6">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,7 +39,7 @@ const Navbar = () => {
         <Link to="/" className="btn btn-ghost normal-case text-xl"> <img className="w-20" src={logo} alt="" /> </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 text-xl">
             {navItems}
         </ul>
       </div>
