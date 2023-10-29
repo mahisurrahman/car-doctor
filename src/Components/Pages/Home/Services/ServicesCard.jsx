@@ -3,7 +3,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const ServicesCard = ({ service }) => {
-    const { img, title, price } = service;
+    const { _id ,img, title, price } = service;
     return (
         <div className="card w-80 bg-base-100 border border-gray-300 rounded-lg">
             <figure className="px-5 pt-5">
@@ -13,7 +13,7 @@ const ServicesCard = ({ service }) => {
                 <h2 className="card-title text-2xl font-semibold">{title}</h2>
                 <div className="flex items-center justify-between text-[#FF3811] font-bold text-lg">
                     <p>Price: ${price}</p>
-                    <Link><AiOutlineArrowRight className="text-2xl hover:text-black"></AiOutlineArrowRight></Link>
+                    <Link to={`/checkout/${_id}`}><AiOutlineArrowRight className="text-2xl hover:text-black"></AiOutlineArrowRight></Link>
                 </div>
             </div>
         </div>

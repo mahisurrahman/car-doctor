@@ -1,17 +1,18 @@
 import { BsFacebook, BsLinkedin, BsGoogle } from "react-icons/bs";
 import loginImg from '../../assets/images/login/login.svg';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProviders/AuthProviders";
 
 const Register = () => {
     
     const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleRegister = event =>{
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
+        // const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
 
@@ -19,6 +20,10 @@ const Register = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            if(user.insertedId){
+                alert('Registered Successfully');
+                navigate('/');
+            }
         })
         .catch(error=>{
             console.log(error);

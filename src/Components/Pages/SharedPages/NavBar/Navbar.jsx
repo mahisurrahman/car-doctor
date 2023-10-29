@@ -1,9 +1,20 @@
 import { Link } from "react-router-dom";
 import logo from '../../../../assets/logo.svg';
 import { BsBag,BsSearch } from "react-icons/bs";
+import { useContext } from "react";
+import { AuthContext } from "../../../../AuthProviders/AuthProviders";
 
 
 const Navbar = () => {
+  const {user,logOut} = useContext(AuthContext);
+
+  const handleLogOut = ()=>{
+    logOut()
+    .then(()=>{})
+    .catch(error=>{
+      console.log(error);
+    })
+  }
 
   const navItems = <>
     <li><Link to="/">Home</Link></li>
@@ -11,6 +22,9 @@ const Navbar = () => {
     <li><Link to="/services">Services</Link></li>
     <li><Link to="/blog">Blog</Link></li>
     <li><Link to="/contact">Contact</Link></li>
+    {
+      user?.email? <li className=" border border-black rounded-lg"><button onClick={handleLogOut}>Log Out</button></li>:<li className=" border border-black rounded-lg"><Link to="/login">Login</Link></li>
+    }
   </>
   return (
     <div className="navbar bg-base-100 h-20 pt-10">
@@ -39,7 +53,7 @@ const Navbar = () => {
         <Link to="/" className="btn btn-ghost normal-case text-xl"> <img className="w-20" src={logo} alt="" /> </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 text-xl">
+        <ul className="menu menu-horizontal px-1 text-xl flex items-center">
             {navItems}
         </ul>
       </div>
